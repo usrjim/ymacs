@@ -4,7 +4,7 @@
 
 ```
 npm install
-npx parcel build
+npx parcel build --no-source-maps
 ```
 
 find assets in the `dist` folder
