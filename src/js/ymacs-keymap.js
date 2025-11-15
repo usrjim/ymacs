@@ -56,7 +56,20 @@ export class Ymacs_Keymap {
         if ("wheelDelta" in ev) {
             key = ev.wheelDelta > 0 ? "WheelUp" : "WheelDown";
         } else {
-            key = ev.key;
+            // Use ev.code when modifiers are present to get the physical key
+            if (ev.altKey || ev.ctrlKey || ev.metaKey || ev.ymacsMeta) {
+                // Convert KeyCode to key name (e.g., KeyS -> s)
+                if (ev.code && ev.code.startsWith('Key')) {
+                    key = ev.code.slice(3).toLowerCase(); // KeyS -> s
+                } else if (ev.code && ev.code.startsWith('Digit')) {
+                    key = ev.code.slice(5); // Digit1 -> 1
+                } else {
+                    key = ev.key;
+                }
+            } else {
+                key = ev.key;
+            }
+            
             if (key == " " || (key == "Unidentified" && ev.code == "Space"))
                 key = "Space";
             if (key.length == 1) key = key.toLowerCase();
