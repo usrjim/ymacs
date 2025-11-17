@@ -218,7 +218,7 @@ let emacs_keys = Object.assign({}, minibuffer_keys, {
     "M-x"                                     : "execute_extended_command",
 
     "C-S-y && C-v"                            : "yank_from_operating_system",
-    "M-S-w"                                   : "copy_for_operating_system",
+    "M-S-w && M-w"                            : "copy_for_operating_system",
 
     // my stuff, sorry if these have different meanings in the standard Emacs keys
     "M-S-y"                                   : "yank_shift", // that's the reverse of yank_shift
