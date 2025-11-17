@@ -103,8 +103,8 @@ let minibuffer_keys = {
     // "Escape"                                  : "_next_is_meta",
     // "M-Escape Escape"                         : "keyboard_quit",
 
-    "C-S-y && C-v"                            : "yank_from_operating_system",
-    "M-S-w"                                   : "copy_for_operating_system",
+    "C-S-y && C-y"                            : "yank_from_operating_system",
+    "M-S-w && M-w"                                   : "copy_for_operating_system",
 
     "C-c /"                                   : "close_last_xml_tag",
     "S-Backspace"                             : "backward_delete_whitespace",
@@ -217,7 +217,7 @@ let emacs_keys = Object.assign({}, minibuffer_keys, {
     // eval
     "M-x"                                     : "execute_extended_command",
 
-    "C-S-y && C-v"                            : "yank_from_operating_system",
+    "C-S-y && C-y"                            : "yank_from_operating_system",
     "M-S-w && M-w"                            : "copy_for_operating_system",
 
     // my stuff, sorry if these have different meanings in the standard Emacs keys
